@@ -258,3 +258,74 @@ p {
     grid-template-columns: 1fr;
   }
 }
+
+.cinematic-video {
+  position: relative;
+  height: 700px;
+  border-radius: 34px;
+  overflow: hidden;
+  border: 4px solid #facc15;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.25);
+  background: black;
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.75),
+      rgba(0,0,0,0.15)
+    );
+}
+
+.floating-leaf {
+  position: absolute;
+  right: 70px;
+  top: 70px;
+  font-size: 90px;
+  z-index: 3;
+  filter: drop-shadow(0 0 18px rgba(255,255,255,0.5));
+}
+
+.floating-bowl {
+  position: absolute;
+  bottom: 70px;
+  left: 70px;
+  font-size: 110px;
+  z-index: 3;
+}
+
+.smoke {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(
+    rgba(255,255,255,0.55),
+    transparent 70%
+  );
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  filter: blur(35px);
+  z-index: 2;
+}
+
+.cinematic-text {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: #fde047;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  z-index: 4;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.7);
+}

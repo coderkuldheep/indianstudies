@@ -71,8 +71,13 @@ function AyurvedaPage() {
     <section className="page-grid">
       <div className="content-panel">
         <span className="tag green">🌿 Ayurveda & Medicine</span>
-        <h1>Ayurvedic Preparation Animation</h1>
-        <p>Animated representation of herbal medicine preparation.</p>
+
+        <h1>Cinematic Ayurvedic Medicine Preparation</h1>
+
+        <p>
+          Experience a realistic Ayurvedic medicine preparation environment
+          inspired by traditional Indian herbal laboratories.
+        </p>
 
         <div className="medicine-list">
           {medicines.map(([name, use]) => (
@@ -84,10 +89,44 @@ function AyurvedaPage() {
         </div>
       </div>
 
-      <div className="animation-box">
-        <motion.div className="circle" animate={{ rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: "linear" }} />
-        <motion.div className="herb" animate={{ y: [0, -25, 0] }} transition={{ duration: 2, repeat: Infinity }}>🌿</motion.div>
-        <motion.div className="bowl" animate={{ rotate: [-8, 8, -8] }} transition={{ duration: 2, repeat: Infinity }}>🥣</motion.div>
+      <div className="cinematic-video">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="bg-video"
+        >
+          <source src="/videos/ayurveda.mp4" type="video/mp4" />
+        </video>
+
+        <div className="video-overlay" />
+
+        <motion.div
+          className="floating-leaf"
+          animate={{ y: [0, -20, 0], rotate: [0, 12, -12, 0] }}
+          transition={{ duration: 4, repeat: Infinity }}
+        >
+          🌿
+        </motion.div>
+
+        <motion.div
+          className="floating-bowl"
+          animate={{ rotate: [-4, 4, -4] }}
+          transition={{ duration: 3, repeat: Infinity }}
+        >
+          🥣
+        </motion.div>
+
+        <motion.div
+          className="smoke"
+          animate={{ opacity: [0.2, 0.6, 0.2], y: [0, -25, 0] }}
+          transition={{ duration: 5, repeat: Infinity }}
+        />
+
+        <div className="cinematic-text">
+          Ancient Ayurvedic Healing Process
+        </div>
       </div>
     </section>
   );
