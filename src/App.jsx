@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 function RealTempleModel() {
   const { scene } = useGLTF("/models/hindu_temple.glb");
-  return <primitive object={scene} scale={2.8} position={[0, -1.8, 0]} />;
+  return <primitive object={scene} scale={2.8} position={[0, -0.3, 0]} />;
 }
 
 useGLTF.preload("/models/hindu_temple.glb");
@@ -39,17 +39,17 @@ function AncientTechnologyPage() {
     <section className="page-grid">
       <div className="content-panel">
         <span className="tag">🏛️ Ancient Indian Technology</span>
-        <h1>360° Rotatable Real Temple Model</h1>
+        <h1>360° Rotatable Brihadeeswarar Temple </h1>
         <p>
-          Explore a real 3D temple model inspired by ancient Indian architecture.
-          Drag, rotate, zoom, and view the model from all sides.
+          This is Brihadeeswarar Temple in Thanjavur known for it's,
+          advanced structural engineering, physics, and material science.
         </p>
 
         <div className="card-grid">
           <Card>Iron Pillar of Delhi</Card>
-          <Card>Temple Architecture</Card>
-          <Card>Water Management Systems</Card>
-          <Card>Textile Technology</Card>
+          <Card>Ajanta Caves</Card>
+          <Card>Mohenjo-daro</Card>
+          <Card>Hawa Mahal</Card>
         </div>
       </div>
 
@@ -72,11 +72,11 @@ function AyurvedaPage() {
       <div className="content-panel">
         <span className="tag green">🌿 Ayurveda & Medicine</span>
 
-        <h1>Cinematic Ayurvedic Medicine Preparation</h1>
+        <h1>Ayurvedic Medicine Preparation</h1>
 
         <p>
-          Experience a realistic Ayurvedic medicine preparation environment
-          inspired by traditional Indian herbal laboratories.
+          Ancient Ayurvedic medicine preparation methodologies
+          still continue to Cure Diseases Naturally without heavy medications.
         </p>
 
         <div className="medicine-list">
@@ -102,21 +102,6 @@ function AyurvedaPage() {
 
         <div className="video-overlay" />
 
-        <motion.div
-          className="floating-leaf"
-          animate={{ y: [0, -20, 0], rotate: [0, 12, -12, 0] }}
-          transition={{ duration: 4, repeat: Infinity }}
-        >
-          🌿
-        </motion.div>
-
-        <motion.div
-          className="floating-bowl"
-          animate={{ rotate: [-4, 4, -4] }}
-          transition={{ duration: 3, repeat: Infinity }}
-        >
-          🥣
-        </motion.div>
 
         <motion.div
           className="smoke"
@@ -133,14 +118,17 @@ function AyurvedaPage() {
 }
 
 function BiodiversityPage() {
-  const birds = useMemo(() => Array.from({ length: 8 }, (_, i) => i), []);
-
   return (
     <section className="page-grid">
       <div className="content-panel">
         <span className="tag blue">⛰️ Biodiversity in India</span>
+
         <h1>Western Ghats & Himalayas</h1>
-        <p>Animated biodiversity landscape showing mountains, forests and wildlife.</p>
+
+        <p>
+           India's biodiversity Varies from thick dense forests to Snowy Mountains,
+           Western Ghats and Himalayas are two Mountains with different ecosystem.
+        </p>
 
         <div className="medicine-list">
           <Card><b>Western Ghats:</b> rich in endemic species.</Card>
@@ -149,19 +137,22 @@ function BiodiversityPage() {
         </div>
       </div>
 
-      <div className="nature-box">
-        {birds.map((b) => (
-          <motion.div
-            key={b}
-            className="bird"
-            style={{ top: `${50 + b * 30}px` }}
-            animate={{ x: [0, 900] }}
-            transition={{ duration: 8 + b, repeat: Infinity, delay: b * 0.5 }}
-          >
-            🐦
-          </motion.div>
-        ))}
-        <motion.div className="tiger" animate={{ x: [0, 80, 0] }} transition={{ duration: 5, repeat: Infinity }}>🐅</motion.div>
+      <div className="biodiversity-video">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="biodiversity-bg-video"
+        >
+          <source src="/videos/biodiversity.mp4" type="video/mp4" />
+        </video>
+
+        <div className="biodiversity-overlay" />
+
+        <div className="biodiversity-text">
+          Western Ghats & Himalayas Biodiversity
+        </div>
       </div>
     </section>
   );
