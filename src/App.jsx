@@ -143,9 +143,10 @@ function BiodiversityPage() {
           muted
           loop
           playsInline
+          preload="auto"
           className="biodiversity-bg-video"
         >
-          <source src="/videos/biodiversity.mp4" type="video/mp4" />
+          <source src="/videos/biodiversity-compressed.mp4" type="video/mp4" />
         </video>
 
         <div className="biodiversity-overlay" />
